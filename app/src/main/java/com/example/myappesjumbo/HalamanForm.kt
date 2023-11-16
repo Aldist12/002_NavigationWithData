@@ -2,15 +2,19 @@ package com.example.myappesjumbo
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -33,3 +37,20 @@ fun HalamanForm(
         Column(
             modifier = Modifier.padding(20.dp)
         ) {
+            OutlinedTextField(
+                value = nama, onValueChange = { nama = it },
+                label = { Text(text = stringResource(id = R.string.nama)) },
+            )
+            Spacer(modifier = Modifier.padding(15.dp))
+            OutlinedTextField(
+                value = noHp, onValueChange = { noHp = it },
+                label = { Text(text = stringResource(id = R.string.noHp)) })
+            Spacer(modifier = Modifier.padding(15.dp))
+            OutlinedTextField(
+                value = alamat, onValueChange = { alamat = it },
+                label = {
+                    Text(text = stringResource(id = R.string.alamat))
+                })
+            Spacer(modifier = Modifier.padding(2.dp))
+        }
+    }
