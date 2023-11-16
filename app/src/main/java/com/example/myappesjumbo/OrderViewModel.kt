@@ -1,5 +1,15 @@
 package com.example.myappesjumbo
 
+import com.example.myappesjumbo.data.OrderUIState
+import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
+import java.text.NumberFormat
+
+private const val HARGA_PER_CUP = 3000
+
 class OrderViewModel : ViewModel() {
     private val _stateUI = MutableStateFlow(OrderUIState())
     val stateUI: StateFlow<OrderUIState> = _stateUI.asStateFlow()
